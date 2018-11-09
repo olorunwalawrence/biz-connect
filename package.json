@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "lint": "eslint *.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,12 @@
   },
   "homepage": "https://github.com/olorunwalawrence/biz-connect#readme",
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
     "body-parser": "^1.18.3",
+    "eslint": "^5.9.0",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.6"
