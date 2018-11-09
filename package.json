@@ -1,0 +1,26 @@
+{
+  "name": "biz-connect",
+  "version": "1.0.0",
+  "description": "biz-connect application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olorunwalawrence/biz-connect.git"
+  },
+  "author": "olorunwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olorunwalawrence/biz-connect/issues"
+  },
+  "homepage": "https://github.com/olorunwalawrence/biz-connect#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.6"
+  }
+}
