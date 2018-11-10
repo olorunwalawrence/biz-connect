@@ -70,6 +70,19 @@ class Biz {
 		});
 		// eslint-disable-next-line indent
 	}
+
+	// delete a business
+
+	static delete(req, res) {
+    const { todoId } = req.params;
+    return Business.destroy({ where: { todoId } })
+      .then(() => {
+        res.status(200).json({ msg: 'Deleted Successfully -> Customer Id = ' + id });
+      }).catch(err => {
+        console.log(err);
+        res.status(500).json({ msg: 'error', details: err });
+      });
+  }
 }
 
 export default Biz;
