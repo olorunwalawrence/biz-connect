@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
@@ -8,7 +9,7 @@ const { should } = chai;
 should();
 
 // set up test fro get api
-describe('BIZ-CONNECT', () => {
+describe('app', () => {
 	it('should list all biz with status code of 200', (done) => {
 		chai
 			.request('')
@@ -17,6 +18,8 @@ describe('BIZ-CONNECT', () => {
 				res.body.should.have.status(200);
 				res.body.should.be.an('object');
 				res.body.should.be.json;
+				res.body.have.property('message'),
+				res.body.message.should.be.equal('posted business')
 			});
 		done();
 	});
@@ -37,9 +40,10 @@ describe('BIZ-CONNECT', () => {
 				res.body.SUCCESS.should.have.property('_id');
 				res.body.SUCCESS.name.should.equal('Java');
 				res.body.SUCCESS.lastName.should.equal('Script');
+			// eslint-disable-next-line indent
 			});
-		done();
-	});
+    done();
+  });
 
 
 });
