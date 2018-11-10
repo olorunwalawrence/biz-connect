@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import db from '../models/index';
 import jwt from 'jsonwebtoken';
 import { config } from 'dotenv';
@@ -53,9 +54,22 @@ class Biz {
 				message: 'all business retrieved',
 				biz
 				// eslint-disable-next-line indent
-			})
-		})
-  }
+			});
+		});
+	}
+
+	// update a business
+
+	static update(req, res) {
+		const id = req.params.id;
+		return Business.update({ where: { id } }).then(biz => {
+			res.status(200).send({
+				message: 'business updated successfully' + id,
+				biz
+			});
+		});
+		// eslint-disable-next-line indent
+	}
 }
 
 export default Biz;
