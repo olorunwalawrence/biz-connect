@@ -41,7 +41,6 @@ describe('BIZ-CONNECT', () => {
 		done();
 	});
 
-	// get a single todo
 
 });
 
