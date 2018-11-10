@@ -1,16 +1,13 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+import { json, urlencoded } from 'body-parser';
 const app = express();
 
 const port = parseInt(process.env.PORT) || 8080;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(json());
+app.use(urlencoded({extended:false}));
 
-app.get('/', (req, res) => res.status(200).send({
-    messgae: 'this is the app home page'
-}));
-
-app.listen(port, (err) => {
-    console.log('server started on port' + port)
+app.listen(port, function(){
+    console.log('server started on port ' + port)
 });
+
