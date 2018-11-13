@@ -17,3 +17,4 @@ app.listen(port, function(){
   console.log('server started on port ' + port);
 });
 
+export default app;

@@ -1,20 +1,20 @@
-
-const fs = require('fs');
-const path = require('path');
+const fs        = require('fs');
+const path      = require('path');
 const Sequelize = require('sequelize');
 const dotenv = require('dotenv');
 
 dotenv.config();
+
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(`${__dirname}/../config/config.json`)[env];
 const db = {};
+  
 
 let sequelize = new Sequelize(process.env[config.use_env_variable], {
   dialect:'postgres',
   logging:false
 });
-
 
 fs
   .readdirSync(__dirname)
@@ -36,14 +36,13 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+// sequelize
+//   .authenticate()
+//   .then(() => {
+//     console.log('Connection has been established successfully.');
+//   })
+//   .catch(err => {
+//     console.error('Unable to connect to the database:', err);
+//   });
 
-
-export default  db;
+export default  db; 
